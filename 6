@@ -1,0 +1,53 @@
+ 
+Page({
+  toastDemo() {
+      wx.showToast({
+          title:'天气',
+          icon:'loading',
+          duration:100000000
+      });
+  },
+  delToast() {
+      wx.hideToast({});
+  },
+
+  createModal() {
+      wx.showModal({
+          // title:'请输入新的名字',
+          // content:'晴转多云'
+          placeholderText:'请输入新的名字',
+          editable:true,
+          success(res) {
+              console.log(res.content);
+          }
+      });
+  },
+
+  createActionSheet() {
+      // let list = ["男","女"];
+      // wx.showActionSheet({
+      //     itemList: list,
+      //     success(res) {
+      //         let index = res.tapIndex;
+      //         console.log(list[index]);
+      //     }
+      // });
+
+      let list = ["顶置","修改","删除"];
+      wx.showActionSheet({
+          itemList: list,
+          success(res) {
+              let index = res.tapIndex;
+              console.log(list[index]);
+              if(list[index]=="顶置") {
+
+              }else if(list[index]=="修改") {
+
+              }else if(list[index]=="删除") {
+
+              }
+          }
+      });
+  }
+
+})
