@@ -1,0 +1,73 @@
+Page({
+  data: {
+    hi: 'Hello World',
+    no: 223,
+    flag:true,
+    mys:'one',
+    dis:'block',
+    teacher:{
+        id:1,
+        name:'小王老师',
+        sex:'男'
+    }, 
+    words:['格物','知智','意得','心正','修身','齐家','治国','平天下'],
+    teacherList:[
+        {id:1,name:'比达哥拉斯',sex:'男'},
+        {id:2,name:'休莫', sex:'男'}
+    ]
+  },
+  updateMain() {
+    if(this.data.mys=='one') {
+        this.setData({mys:'two'});
+    }else {
+        this.setData({mys:'one'});
+    }
+    
+  },
+  updateFlag() {
+     console.log(this.data.flag)
+     this.setData({
+         flag: !this.data.flag
+     });
+  },
+  updateHiAndNo() {
+    this.setData({
+        hi: '世界你好',
+        no: ++this.data.no
+    });
+  },
+  updateTeacher() {
+    //   this.setData({
+    //     teacher:{id:2, name:'王光荣', sex:'男' }
+    //   });
+    this.data.teacher.name = "王光荣";
+    this.setData({
+        teacher: this.data.teacher
+    });
+  },
+  updateTeacherList() {
+    // let list1 = [
+    //     {id:100,name:'柏拉图',sex:'女'},
+    //     {id:200,name:'ylsdd', sex:'男'}
+    // ];
+    // this.setData({
+    //     teacherList: list1
+    // });
+
+    this.data.teacherList.push({id:100,name:'柏拉图',sex:'女'});
+    this.setData({
+        teacherList: this.data.teacherList
+    });
+  },
+  updateDis() {
+      if(this.data.dis=="block") {
+          this.setData({
+              dis:'none'
+          });
+      }else {
+        this.setData({
+            dis:'block'
+        });
+      }
+  }
+})
