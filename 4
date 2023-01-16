@@ -1,0 +1,17 @@
+ 
+Page({
+  data:{
+      size:0
+  },
+  
+  show(event) {
+      console.log(event.detail.value);
+      this.setData({
+          size:event.detail.value
+      })
+  },
+
+  swiperchange(event) {
+      console.log(event.detail.current);
+  }
+})
