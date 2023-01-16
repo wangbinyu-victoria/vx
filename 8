@@ -1,0 +1,75 @@
+const app = getApp();
+
+Page({
+  data:{
+      inf:'',
+      stuList:[]
+  },
+
+  getInf() {
+    let that = this;
+    wx.request({
+        url:app.url+'getHello.do',
+        method:'GET',
+        success(res) {
+            console.log(res.data);
+            that.setData({inf:res.data});
+        },
+        fail(err) {
+            console.log(err);
+        }
+    });
+  },
+  //http://localhost:8080/getAllStu.do
+  getAllStu() {
+    let that = this;
+    wx.request({
+        url:app.url+'getAllStu.do',
+        method:'GET',
+        success(res) {
+            console.log(res.data);
+            that.setData({stuList: res.data});
+        },
+        fail(err) {
+            console.log(err);
+        }
+    });
+  },
+
+  test1() {
+    let that = this;
+    wx.request({
+        url:app.url+'test1.do',
+        method:'GET',
+        data:{
+            no:"mingxeee",
+            pwd:'123456'
+        },
+        success(res) {
+            console.log(res.data);
+        },
+        fail(err) {
+            console.log(err);
+        }
+    });
+  },
+
+  test2() {
+    let that = this;
+    wx.request({
+        url:app.url+'test2.do',
+        method:'POST',
+        data:{
+            no:"mingxeee",
+            pwd:'123456'
+        },
+        success(res) {
+            console.log(res.data);
+        },
+        fail(err) {
+            console.log(err);
+        }
+    });
+  }
+
+})
