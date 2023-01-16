@@ -1,0 +1,20 @@
+ 
+Page({
+  //e:事件信息对象
+  tapme1(e) {
+       console.log("tapme1()");
+       wx.showToast({
+         title: 'tapme1()',
+       });
+  },
+  tapme2(e) {
+       console.log("tapme2()")
+  },
+  tapme3(e) {
+       console.log("tapme3()");
+       console.log(e.currentTarget);
+       console.log(e.currentTarget.id);//test100
+       console.log(e.currentTarget.dataset.hi);//微信
+       console.log(e.currentTarget.dataset.school);//民大
+  },
+})
